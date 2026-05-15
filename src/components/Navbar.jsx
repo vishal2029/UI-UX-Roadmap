@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 import { useProgress } from '../context/ProgressContext';
+import { useAuth } from '../context/AuthContext';
 
 const links = [
   { href: '#overview',  label: 'Overview'  },
@@ -34,12 +35,23 @@ function MoonIcon() {
   );
 }
 
+function LogoutIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+      <polyline points="16 17 21 12 16 7"/>
+      <line x1="21" y1="12" x2="9" y2="12"/>
+    </svg>
+  );
+}
+
 export default function Navbar() {
   const [scrolled,    setScrolled]    = useState(false);
   const [scrollPct,   setScrollPct]   = useState(0);   // for top strip only
   const [menuOpen,    setMenuOpen]    = useState(false);
   const { dark, toggle } = useTheme();
   const { pct: checklistPct, checked, total } = useProgress(); // for the pill
+  const { logout } = useAuth();
 
   useEffect(() => {
     const onScroll = () => {
@@ -137,6 +149,20 @@ export default function Navbar() {
 
           {/* Right controls */}
           <div className="ml-4 flex items-center gap-2">
+            {/* Logout button */}
+            <button
+              onClick={logout}
+              aria-label="Log out"
+              title="Log out"
+              className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 ${
+                dark
+                  ? 'bg-white/[0.06] border border-white/[0.08] text-white/40 hover:bg-red-500/20 hover:text-red-400 hover:border-red-500/30'
+                  : 'bg-gray-100 border border-gray-200 text-gray-500 hover:bg-red-50 hover:text-red-500 hover:border-red-200'
+              }`}
+            >
+              <LogoutIcon />
+            </button>
+
             {/* Theme toggle */}
             <button
               onClick={toggle}
