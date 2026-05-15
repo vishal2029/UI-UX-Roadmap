@@ -1,11 +1,13 @@
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { ProgressProvider } from './context/ProgressContext';
+import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import RoadmapSection from './components/RoadmapSection';
 import TheorySection from './components/TheorySection';
 import ResourcesSection from './components/ResourcesSection';
 import PortfolioSection from './components/PortfolioSection';
+import LoginGate from './components/LoginGate';
 
 function Footer() {
   const { dark } = useTheme();
@@ -56,9 +58,13 @@ function AppInner() {
 export default function App() {
   return (
     <ThemeProvider>
-      <ProgressProvider>
-        <AppInner />
-      </ProgressProvider>
+      <AuthProvider>
+        <ProgressProvider>
+          <LoginGate>
+            <AppInner />
+          </LoginGate>
+        </ProgressProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 }
