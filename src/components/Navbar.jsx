@@ -50,8 +50,13 @@ export default function Navbar() {
   const [scrollPct,   setScrollPct]   = useState(0);   // for top strip only
   const [menuOpen,    setMenuOpen]    = useState(false);
   const { dark, toggle } = useTheme();
-  const { pct: checklistPct, checked, total } = useProgress(); // for the pill
+  const { pct: checklistPct, checked, total, clearProgress } = useProgress(); // for the pill
   const { logout } = useAuth();
+
+  const handleLogout = () => {
+    clearProgress();
+    logout();
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -151,7 +156,7 @@ export default function Navbar() {
           <div className="ml-4 flex items-center gap-2">
             {/* Logout button */}
             <button
-              onClick={logout}
+              onClick={handleLogout}
               aria-label="Log out"
               title="Log out"
               className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 ${

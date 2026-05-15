@@ -22,10 +22,12 @@ export function ProgressProvider({ children }) {
       prev.includes(i) ? prev.filter(x => x !== i) : [...prev, i]
     );
 
+  const clearProgress = () => setChecked([]);
+
   const pct = Math.round((checked.length / checklist.length) * 100);
 
   return (
-    <ProgressContext.Provider value={{ checked, toggle, pct, total: checklist.length }}>
+    <ProgressContext.Provider value={{ checked, toggle, clearProgress, pct, total: checklist.length }}>
       {children}
     </ProgressContext.Provider>
   );
