@@ -1,10 +1,21 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import { checklist } from '../data';
 
 const ProgressContext = createContext();
 
 export function ProgressProvider({ children }) {
-  const [checked, setChecked] = useState([]);
+  const [checked, setChecked] = useState(() => {
+    try {
+      const saved = localStorage.getItem('roadmap_progress');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem('roadmap_progress', JSON.stringify(checked));
+  }, [checked]);
 
   const toggle = (i) =>
     setChecked(prev =>

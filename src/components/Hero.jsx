@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
+import { useAuth } from '../context/AuthContext';
 
 const outcomes = [
   { icon: '🧠', title: 'Deep UX Knowledge', desc: 'Clear understanding of UX process, UI fundamentals, and the terminology designers use every day.' },
@@ -12,6 +13,7 @@ const outcomes = [
 
 export default function Hero() {
   const { dark } = useTheme();
+  const { userName } = useAuth();
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-20 overflow-hidden">
       {/* Orbs */}
@@ -34,7 +36,9 @@ export default function Hero() {
           className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full bg-violet-500/10 border border-violet-500/20"
         >
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-slow" />
-          <span className="text-xs font-bold text-violet-300 tracking-widest uppercase">12-Week Internship Roadmap</span>
+          <span className="text-xs font-bold text-violet-300 tracking-widest uppercase">
+            Welcome back, {userName}
+          </span>
         </motion.div>
 
         {/* Title */}
