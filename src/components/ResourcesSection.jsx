@@ -57,6 +57,7 @@ function AIToolCard({ tool, index }) {
   );
 }
 
+const dark = false;
 export default function ResourcesSection() {
   const [ytTab, setYtTab] = useState('english');
   

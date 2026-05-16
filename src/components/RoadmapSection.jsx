@@ -189,6 +189,7 @@ function WeekModal({ w, onClose }) {
   );
 }
 
+const dark = false;
 export default function RoadmapSection() {
   const [selected,    setSelected]    = useState(null);
   const [activePhase, setActivePhase] = useState(null);

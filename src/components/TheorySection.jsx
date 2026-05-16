@@ -49,6 +49,7 @@ function TheoryAccordion({ item, index }) {
   );
 }
 
+const dark = false;
 export default function TheorySection() {
     const termColors = [
     dark

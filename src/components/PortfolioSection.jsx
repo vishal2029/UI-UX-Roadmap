@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { niches, caseStudySteps, checklist } from '../data';
 import { useProgress } from '../context/ProgressContext';
 
+const dark = false;
 export default function PortfolioSection() {
     const { checked, toggle, pct: checkProgress } = useProgress();
 

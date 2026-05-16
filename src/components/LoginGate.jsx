@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 
+const dark = false;
 export default function LoginGate({ children }) {
   const [inputName, setInputName] = useState('');
     const { userName, login, isLoaded } = useAuth();
