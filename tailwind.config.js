@@ -1,21 +1,23 @@
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Outfit', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+        display: ['"Space Grotesk"', 'sans-serif'],
       },
       colors: {
         bg: '#07070f',
         surface: '#0d0d1a',
         surface2: '#131324',
         border: 'rgba(255,255,255,0.07)',
-        accent: '#7c6fff',
-        accent2: '#ff6fb0',
-        accent3: '#6fffd4',
-        muted: 'rgba(220,220,255,0.45)',
+        // Instantly re-theme the app by mapping the old colors to our new Ed-Tech brand colors
+        violet: colors.indigo,
+        pink: colors.orange,
+        cyan: colors.teal,
       },
       animation: {
         'float': 'float 8s ease-in-out infinite',

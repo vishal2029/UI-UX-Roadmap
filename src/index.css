@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --accent: #7c6fff;
-  --accent2: #ff6fb0;
-  --accent3: #6fffd4;
+  --accent: #4f46e5;
+  --accent2: #f97316;
+  --accent3: #14b8a6;
 }
 
 * { box-sizing: border-box; }
@@ -17,25 +17,25 @@ html { scroll-behavior: smooth; }
 body {
   background: #07070f;
   color: #f0f0ff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: #07070f; }
-::-webkit-scrollbar-thumb { background: rgba(124,111,255,0.35); border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: rgba(79, 70, 229, 0.35); border-radius: 99px; }
 
 /* Gradient text utility */
 .grad-text {
-  background: linear-gradient(135deg, #7c6fff, #ff6fb0);
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .grad-text-2 {
-  background: linear-gradient(135deg, #6fffd4, #7c6fff);
+  background: linear-gradient(135deg, var(--accent3), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -50,12 +50,12 @@ body {
 
 /* Glow button */
 .glow-btn {
-  background: linear-gradient(135deg, #7c6fff, #ff6fb0);
-  box-shadow: 0 0 40px rgba(124,111,255,0.4);
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 40px rgba(79, 70, 229, 0.4);
   transition: box-shadow 0.3s, transform 0.2s;
 }
 .glow-btn:hover {
-  box-shadow: 0 0 70px rgba(124,111,255,0.65);
+  box-shadow: 0 0 70px rgba(79, 70, 229, 0.65);
   transform: translateY(-2px);
 }
 
@@ -74,7 +74,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  background: linear-gradient(180deg, rgba(124,111,255,0.5), rgba(255,111,176,0.3));
+  background: linear-gradient(180deg, rgba(79, 70, 229, 0.5), rgba(249, 115, 22, 0.3));
 }
 
 /* Week node */
