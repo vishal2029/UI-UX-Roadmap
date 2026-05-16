@@ -70,8 +70,8 @@ export default function Navbar() {
 
   // pill colour
   const pillCls = dark
-    ? 'bg-violet-500/15 border-violet-500/30 text-violet-300 hover:bg-violet-500/25'
-    : 'bg-violet-100  border-violet-200    text-violet-700 hover:bg-violet-200';
+    ? 'bg-indigo-500/15 border-indigo-500/30 text-indigo-300 hover:bg-indigo-500/25'
+    : 'bg-indigo-100  border-indigo-200    text-indigo-700 hover:bg-indigo-200';
 
   // circumference of the ring
   const R  = 6;
@@ -84,7 +84,7 @@ export default function Navbar() {
       <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] pointer-events-none">
         <div className={`absolute inset-0 ${dark ? 'bg-white/[0.05]' : 'bg-black/[0.07]'}`} />
         <motion.div
-          className="absolute top-0 left-0 h-full bg-gradient-to-r from-violet-500 via-pink-500 to-cyan-400"
+          className="absolute top-0 left-0 h-full bg-gradient-to-r from-indigo-500 via-orange-500 to-teal-400"
           style={{ width: `${scrollPct}%` }}
           transition={{ duration: 0.08 }}
         />
@@ -113,7 +113,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 font-display font-bold text-[15px] shrink-0">
-            <span className="text-violet-500 text-xl">✦</span>
+            <span className="text-indigo-500 text-xl">✦</span>
             <span className={`hidden sm:block ${dark ? 'text-white' : 'text-gray-900'}`}>UI/UX Roadmap</span>
           </a>
 
@@ -233,7 +233,7 @@ export default function Navbar() {
               href="#progress"
               onClick={() => setMenuOpen(false)}
               className={`flex items-center gap-2 text-sm font-bold py-1 ${
-                dark ? 'text-violet-300' : 'text-violet-700'
+                dark ? 'text-indigo-300' : 'text-indigo-700'
               }`}
             >
               Checklist Progress — {checked.length}/{total} done ({checklistPct}%)

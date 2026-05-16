@@ -31,7 +31,7 @@ export default function LoginGate({ children }) {
         }`}
       >
         <div className="text-center mb-8">
-          <div className="w-16 h-16 mx-auto bg-gradient-to-br from-violet-500 to-fuchsia-500 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-violet-500/20">
+          <div className="w-16 h-16 mx-auto bg-gradient-to-br from-indigo-500 to-indigo-500 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-lg shadow-indigo-500/20">
             ✦
           </div>
           <h1 className="font-display font-black text-3xl mb-3">Welcome</h1>
@@ -53,8 +53,8 @@ export default function LoginGate({ children }) {
               placeholder="e.g. Jane Doe"
               className={`w-full px-5 py-4 rounded-xl border text-sm transition-all outline-none ${
                 dark
-                  ? 'bg-white/[0.03] border-white/10 focus:border-violet-500 focus:bg-white/[0.06] text-white placeholder:text-white/20'
-                  : 'bg-gray-50 border-gray-200 focus:border-violet-500 focus:bg-white text-gray-900 placeholder:text-gray-400'
+                  ? 'bg-white/[0.03] border-white/10 focus:border-indigo-500 focus:bg-white/[0.06] text-white placeholder:text-white/20'
+                  : 'bg-gray-50 border-gray-200 focus:border-indigo-500 focus:bg-white text-gray-900 placeholder:text-gray-400'
               }`}
               autoFocus
             />
@@ -62,7 +62,7 @@ export default function LoginGate({ children }) {
           <button
             type="submit"
             disabled={!inputName.trim()}
-            className="w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold text-sm py-4 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-violet-500/20"
+            className="w-full bg-gradient-to-r from-indigo-500 to-indigo-500 text-white font-bold text-sm py-4 rounded-xl hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-indigo-500/20"
           >
             Start Journey →
           </button>

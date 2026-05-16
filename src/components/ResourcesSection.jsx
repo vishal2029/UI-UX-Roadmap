@@ -68,7 +68,7 @@ export default function ResourcesSection() {
       {/* AI Tools */}
       <section id="tools" className="py-32 px-6 relative">
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-cyan-500/5 blur-[100px]" />
+          <div className="absolute top-1/2 right-0 w-[400px] h-[400px] rounded-full bg-teal-500/5 blur-[100px]" />
         </div>
         <div className="max-w-6xl mx-auto relative">
           <motion.div
@@ -77,7 +77,7 @@ export default function ResourcesSection() {
             viewport={{ once: true }}
             className="text-center mb-6"
           >
-            <span className="tag-pill bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 mb-4 inline-block">Modern Workflow</span>
+            <span className="tag-pill bg-teal-500/10 border border-teal-500/20 text-teal-400 mb-4 inline-block">Modern Workflow</span>
             <h2 className="font-display font-black text-4xl sm:text-5xl mb-4">AI Tools in Design</h2>
             <p className={`max-w-md mx-auto ${dark ? 'text-white/45' : 'text-gray-500'}`}>Speed up the process — never replace your thinking. Tap each card to see how to use it.</p>
           </motion.div>
@@ -87,11 +87,11 @@ export default function ResourcesSection() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="mb-10 p-4 rounded-2xl bg-amber-500/[0.06] border border-amber-500/15 flex items-start gap-3 max-w-2xl mx-auto"
+            className="mb-10 p-4 rounded-2xl bg-orange-500/[0.06] border border-orange-500/15 flex items-start gap-3 max-w-2xl mx-auto"
           >
             <span className="text-xl shrink-0">💡</span>
             <p className={`text-sm leading-relaxed ${dark ? 'text-white/55' : 'text-gray-600'}`}>
-              <strong className="text-amber-400">Good habit:</strong> Sketch manually first → ask AI for 5 alternatives → select one → refine in Figma. Your portfolio shows <em>your</em> thinking, not just the tool output.
+              <strong className="text-orange-400">Good habit:</strong> Sketch manually first → ask AI for 5 alternatives → select one → refine in Figma. Your portfolio shows <em>your</em> thinking, not just the tool output.
             </p>
           </motion.div>
 
@@ -110,7 +110,7 @@ export default function ResourcesSection() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="tag-pill bg-pink-500/10 border border-pink-500/20 text-pink-400 mb-4 inline-block">Where to Look</span>
+            <span className="tag-pill bg-orange-500/10 border border-orange-500/20 text-orange-400 mb-4 inline-block">Where to Look</span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl mb-3">Inspiration Sources</h2>
             <p className={`text-sm max-w-lg mx-auto ${dark ? 'text-white/40' : 'text-gray-500'}`}>Study like a designer — ask: what is the goal of this page? How does the layout guide attention? What patterns are repeated?</p>
           </motion.div>
@@ -129,7 +129,7 @@ export default function ResourcesSection() {
                 className={`block p-5 border rounded-2xl transition-all ${
                   dark
                     ? 'bg-white/[0.03] border-white/[0.07] hover:border-white/[0.15] hover:bg-white/[0.06]'
-                    : 'bg-white border-gray-100 shadow-sm hover:border-violet-200 hover:shadow-md'
+                    : 'bg-white border-gray-100 shadow-sm hover:border-indigo-200 hover:shadow-md'
                 }`}
               >
                 <div className="text-3xl mb-3">{s.emoji}</div>
@@ -150,7 +150,7 @@ export default function ResourcesSection() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="tag-pill bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 mb-4 inline-block">Daily Practice</span>
+            <span className="tag-pill bg-teal-500/10 border border-teal-500/20 text-teal-400 mb-4 inline-block">Daily Practice</span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl">Your Weekly Routine</h2>
           </motion.div>
           <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
@@ -162,10 +162,10 @@ export default function ResourcesSection() {
                 transition={{ delay: i * 0.07 }}
                 viewport={{ once: true }}
                 className={`bg-white/[0.03] border rounded-2xl p-4 text-center ${
-                dark ? 'border-white/[0.06] hover:border-violet-500/25' : 'bg-white border-gray-100 shadow-sm hover:border-violet-300'
+                dark ? 'border-white/[0.06] hover:border-indigo-500/25' : 'bg-white border-gray-100 shadow-sm hover:border-indigo-300'
               } transition-colors`}
               >
-                <div className="text-xs font-black uppercase tracking-widest text-violet-400 mb-2">{r.day}</div>
+                <div className="text-xs font-black uppercase tracking-widest text-indigo-400 mb-2">{r.day}</div>
                 <div className={`text-xs leading-snug ${dark ? 'text-white/50' : 'text-gray-500'}`}>{r.task}</div>
               </motion.div>
             ))}

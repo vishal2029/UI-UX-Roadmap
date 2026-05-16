@@ -15,7 +15,7 @@ function Footer() {
     <footer className={`border-t py-8 px-6 ${dark ? 'border-white/[0.06]' : 'border-gray-200'}`}>
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
         <div className={`flex items-center gap-2 ${dark ? 'text-white/30' : 'text-gray-400'}`}>
-          <span className="text-violet-500">✦</span>
+          <span className="text-indigo-500">✦</span>
           <span>UI/UX Internship Roadmap — 12-Week Journey</span>
         </div>
         <div className={`flex gap-6 ${dark ? 'text-white/30' : 'text-gray-400'}`}>
@@ -25,7 +25,7 @@ function Footer() {
               href={`#${l.toLowerCase()}`}
               className={`transition-colors font-medium ${
                 l === 'Progress'
-                  ? 'text-violet-500 hover:text-violet-400'
+                  ? 'text-indigo-500 hover:text-indigo-400'
                   : dark ? 'hover:text-white/60' : 'hover:text-gray-700'
               }`}
             >

@@ -4,9 +4,9 @@ import { weeks, phases } from '../data';
 import { useTheme } from '../context/ThemeContext';
 
 const phaseColors = {
-  1: { dot: 'bg-violet-400', ring: 'ring-violet-500/30', badge: 'bg-violet-500/10 text-violet-400 border-violet-500/25', line: 'bg-violet-500/40' },
+  1: { dot: 'bg-indigo-400', ring: 'ring-indigo-500/30', badge: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/25', line: 'bg-indigo-500/40' },
   2: { dot: 'bg-orange-400', ring: 'ring-orange-500/30', badge: 'bg-orange-500/10 text-orange-400 border-orange-500/25', line: 'bg-orange-500/40' },
-  3: { dot: 'bg-cyan-400', ring: 'ring-cyan-500/30', badge: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/25', line: 'bg-cyan-500/40' },
+  3: { dot: 'bg-teal-400', ring: 'ring-teal-500/30', badge: 'bg-teal-500/10 text-teal-400 border-teal-500/25', line: 'bg-teal-500/40' },
   4: { dot: 'bg-indigo-400', ring: 'ring-indigo-500/30', badge: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/25', line: 'bg-indigo-500/40' },
 };
 
@@ -23,7 +23,7 @@ function WeekCard({ w, onClick }) {
       className={`group relative text-left border rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl w-full ${
         dark
           ? 'bg-white/[0.03] border-white/[0.07] hover:bg-white/[0.06] hover:border-white/[0.14]'
-          : 'bg-white border-gray-100 shadow-sm hover:border-violet-200 hover:shadow-md'
+          : 'bg-white border-gray-100 shadow-sm hover:border-indigo-200 hover:shadow-md'
       }`}
     >
       {/* Top bar */}
@@ -102,7 +102,7 @@ function WeekModal({ w, onClose }) {
             <ul className="space-y-2">
               {w.learn.map((l, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-violet-400 mt-0.5 shrink-0">→</span>
+                  <span className="text-indigo-400 mt-0.5 shrink-0">→</span>
                   <span className={`text-sm ${dark ? 'text-white/70' : 'text-gray-700'}`}>{l}</span>
                 </li>
               ))}
@@ -121,8 +121,8 @@ function WeekModal({ w, onClose }) {
 
           {/* Exercise */}
           {w.exercise && (
-            <div className="mb-6 p-4 bg-amber-500/5 rounded-xl border border-amber-500/15">
-              <h4 className="text-[11px] font-bold uppercase tracking-widest text-amber-400/70 mb-2">🎯 Practical Exercise</h4>
+            <div className="mb-6 p-4 bg-orange-500/5 rounded-xl border border-orange-500/15">
+              <h4 className="text-[11px] font-bold uppercase tracking-widest text-orange-400/70 mb-2">🎯 Practical Exercise</h4>
               <p className={`text-sm leading-relaxed ${dark ? 'text-white/55' : 'text-gray-500'}`}>{w.exercise}</p>
             </div>
           )}
@@ -133,7 +133,7 @@ function WeekModal({ w, onClose }) {
             <ul className="space-y-2">
               {w.build.map((b, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="text-emerald-400 mt-0.5 shrink-0">✓</span>
+                  <span className="text-teal-400 mt-0.5 shrink-0">✓</span>
                   <span className={`text-sm ${dark ? 'text-white/70' : 'text-gray-700'}`}>{b}</span>
                 </li>
               ))}
@@ -141,8 +141,8 @@ function WeekModal({ w, onClose }) {
           </div>
 
           {/* Output */}
-          <div className="p-4 bg-emerald-500/5 rounded-xl border border-emerald-500/15">
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-emerald-400/70 mb-2">✦ Week {w.week} Output</h4>
+          <div className="p-4 bg-teal-500/5 rounded-xl border border-teal-500/15">
+            <h4 className="text-[11px] font-bold uppercase tracking-widest text-teal-400/70 mb-2">✦ Week {w.week} Output</h4>
             <p className={`text-sm font-medium ${dark ? 'text-white/65' : 'text-gray-700'}`}>{w.output}</p>
           </div>
 
@@ -209,7 +209,7 @@ export default function RoadmapSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="tag-pill bg-pink-500/10 border border-pink-500/20 text-pink-400 mb-4 inline-block">The Journey</span>
+          <span className="tag-pill bg-orange-500/10 border border-orange-500/20 text-orange-400 mb-4 inline-block">The Journey</span>
           <h2 className="font-display font-black text-4xl sm:text-5xl mb-4">12-Week Roadmap</h2>
           <p className={`max-w-lg mx-auto ${dark ? 'text-white/45' : 'text-gray-500'}`}>Click any week to explore the full breakdown — what to learn, what to build, and what you'll have by the end.</p>
         </motion.div>
@@ -222,7 +222,7 @@ export default function RoadmapSection() {
               activePhase === null
                 ? dark
                   ? 'bg-white/10 border-white/20 text-white'
-                  : 'bg-violet-100 border-violet-300 text-violet-800'
+                  : 'bg-indigo-100 border-indigo-300 text-indigo-800'
                 : `border-white/10 ${dark ? 'text-white/40 hover:text-white/70' : 'text-gray-400 hover:text-gray-700'}`
             }`}
           >

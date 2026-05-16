@@ -18,9 +18,9 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-20 overflow-hidden">
       {/* Orbs */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -left-32 w-[600px] h-[600px] rounded-full bg-violet-600/15 blur-[120px] animate-float" />
-        <div className="absolute -bottom-40 -right-32 w-[500px] h-[500px] rounded-full bg-pink-600/12 blur-[120px] animate-float2" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-cyan-500/8 blur-[100px] animate-float3" />
+        <div className="absolute -top-40 -left-32 w-[600px] h-[600px] rounded-full bg-indigo-600/15 blur-[120px] animate-float" />
+        <div className="absolute -bottom-40 -right-32 w-[500px] h-[500px] rounded-full bg-orange-600/12 blur-[120px] animate-float2" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-teal-500/8 blur-[100px] animate-float3" />
       </div>
 
       {/* Grid pattern */}
@@ -33,10 +33,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full bg-violet-500/10 border border-violet-500/20"
+          className="inline-flex items-center gap-2 mb-8 px-5 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20"
         >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-slow" />
-          <span className="text-xs font-bold text-violet-300 tracking-widest uppercase">
+          <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse-slow" />
+          <span className="text-xs font-bold text-indigo-300 tracking-widest uppercase">
             Welcome back, {userName}
           </span>
         </motion.div>
@@ -79,7 +79,7 @@ export default function Hero() {
             <div key={i} className="flex items-center">
               {i > 0 && <div className={`w-px h-14 ${dark ? 'bg-white/[0.07]' : 'bg-gray-100'}`} />}
               <div className="px-8 py-4 text-center">
-                <div className="font-display text-3xl font-black text-violet-400">{s.num}</div>
+                <div className="font-display text-3xl font-black text-indigo-400">{s.num}</div>
                 <div className={`text-xs font-medium mt-0.5 ${dark ? 'text-white/40' : 'text-gray-400'}`}>{s.label}</div>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function Hero() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="tag-pill bg-violet-500/10 border border-violet-500/20 text-violet-400 mb-4 inline-block">By the End of 12 Weeks</span>
+          <span className="tag-pill bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-4 inline-block">By the End of 12 Weeks</span>
           <h2 className="font-display font-black text-3xl sm:text-4xl">What You'll Have</h2>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

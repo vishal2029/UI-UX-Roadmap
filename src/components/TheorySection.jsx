@@ -14,7 +14,7 @@ function TheoryAccordion({ item, index }) {
       viewport={{ once: true }}
       className={`border rounded-2xl overflow-hidden transition-all duration-200 ${
         open
-          ? 'border-violet-500/30 ' + (dark ? 'bg-violet-500/[0.04]' : 'bg-violet-50')
+          ? 'border-indigo-500/30 ' + (dark ? 'bg-indigo-500/[0.04]' : 'bg-indigo-50')
           : dark ? 'border-white/[0.07] bg-white/[0.025]' : 'border-gray-100 bg-white shadow-sm'
       }`}
     >
@@ -27,7 +27,7 @@ function TheoryAccordion({ item, index }) {
         <motion.span
           animate={{ rotate: open ? 90 : 0 }}
           transition={{ duration: 0.25 }}
-          className={`text-sm shrink-0 transition-colors ${open ? 'text-violet-500' : dark ? 'text-white/30' : 'text-gray-400'}`}
+          className={`text-sm shrink-0 transition-colors ${open ? 'text-indigo-500' : dark ? 'text-white/30' : 'text-gray-400'}`}
         >
           ▶
         </motion.span>
@@ -55,19 +55,19 @@ export default function TheorySection() {
   const { dark } = useTheme();
   const termColors = [
     dark
-      ? 'bg-violet-500/10 border-violet-500/25 text-violet-300'
-      : 'bg-violet-50 border-violet-200 text-violet-700',
+      ? 'bg-indigo-500/10 border-indigo-500/25 text-indigo-300'
+      : 'bg-indigo-50 border-indigo-200 text-indigo-700',
     dark
-      ? 'bg-pink-500/10 border-pink-500/20 text-pink-300'
-      : 'bg-pink-50 border-pink-200 text-pink-700',
+      ? 'bg-orange-500/10 border-orange-500/20 text-orange-300'
+      : 'bg-orange-50 border-orange-200 text-orange-700',
     dark
-      ? 'bg-cyan-500/10 border-cyan-500/20 text-cyan-300'
-      : 'bg-cyan-50 border-cyan-200 text-cyan-700',
+      ? 'bg-teal-500/10 border-teal-500/20 text-teal-300'
+      : 'bg-teal-50 border-teal-200 text-teal-700',
   ];
   return (
     <section id="theory" className="py-32 px-6 relative">
       {/* Background glow */}
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-violet-600/5 blur-[100px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-indigo-600/5 blur-[100px]" />
 
       <div className="max-w-6xl mx-auto relative">
         {/* Header */}
@@ -77,7 +77,7 @@ export default function TheorySection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="tag-pill bg-violet-500/10 border border-violet-500/20 text-violet-400 mb-4 inline-block">Core Theory</span>
+          <span className="tag-pill bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-4 inline-block">Core Theory</span>
           <h2 className="font-display font-black text-4xl sm:text-5xl mb-4">Concepts You Must Understand</h2>
           <p className={`max-w-md mx-auto ${dark ? 'text-white/45' : 'text-gray-500'}`}>Click each concept to expand the explanation. These are the foundations everything else builds on.</p>
         </motion.div>
@@ -96,7 +96,7 @@ export default function TheorySection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <span className="tag-pill bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 mb-4 inline-block">Terminology</span>
+          <span className="tag-pill bg-teal-500/10 border border-teal-500/20 text-teal-400 mb-4 inline-block">Terminology</span>
           <h3 className="font-display font-bold text-2xl sm:text-3xl mb-8">Key Terms to Know</h3>
           <div className="flex flex-wrap justify-center gap-2.5">
             {terms.map((t, i) => (

@@ -42,10 +42,10 @@ export default function PortfolioSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.06 }}
                 viewport={{ once: true }}
-                className={`relative p-5 border rounded-2xl hover:border-pink-400/40 hover:-translate-y-1 transition-all duration-200 cursor-default ${card}`}
+                className={`relative p-5 border rounded-2xl hover:border-orange-400/40 hover:-translate-y-1 transition-all duration-200 cursor-default ${card}`}
               >
                 {n.best && (
-                  <div className="absolute -top-2 -right-2 text-[9px] font-black uppercase tracking-widest bg-emerald-500/15 border border-emerald-500/25 text-emerald-500 px-2 py-0.5 rounded-full">
+                  <div className="absolute -top-2 -right-2 text-[9px] font-black uppercase tracking-widest bg-teal-500/15 border border-teal-500/25 text-teal-500 px-2 py-0.5 rounded-full">
                     ✦ Pick this
                   </div>
                 )}
@@ -121,17 +121,17 @@ export default function PortfolioSection() {
                     key={i}
                     className={`flex items-center gap-4 py-3 border-b last:border-0 ${dark ? 'border-white/[0.05]' : 'border-gray-100'}`}
                   >
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-xs font-black shrink-0 text-white">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-500 to-orange-500 flex items-center justify-center text-xs font-black shrink-0 text-white">
                       {i + 1}
                     </div>
                     <div className={`text-sm font-medium ${dark ? 'text-white/75' : 'text-gray-700'}`}>{step}</div>
-                    {i < 3 && <div className="ml-auto text-[10px] text-emerald-500 font-semibold">Essential</div>}
+                    {i < 3 && <div className="ml-auto text-[10px] text-teal-500 font-semibold">Essential</div>}
                   </div>
                 ))}
               </div>
 
-              <div className="mt-6 p-4 bg-amber-500/[0.05] border border-amber-500/15 rounded-xl">
-                <h4 className="text-xs font-bold uppercase tracking-widest text-amber-500/80 mb-2">What to Avoid</h4>
+              <div className="mt-6 p-4 bg-orange-500/[0.05] border border-orange-500/15 rounded-xl">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-orange-500/80 mb-2">What to Avoid</h4>
                 <ul className="space-y-1.5">
                   {[
                     "Don't make the portfolio a messy poster wall",
@@ -168,10 +168,10 @@ export default function PortfolioSection() {
                 <div
                   key={i}
                   className={`p-3 text-center rounded-xl border ${
-                    dark ? 'bg-emerald-500/[0.04] border-emerald-500/15' : 'bg-emerald-50 border-emerald-100'
+                    dark ? 'bg-teal-500/[0.04] border-teal-500/15' : 'bg-teal-50 border-teal-100'
                   }`}
                 >
-                  <div className="text-lg mb-1 text-emerald-500">✓</div>
+                  <div className="text-lg mb-1 text-teal-500">✓</div>
                   <div className={`text-xs leading-snug ${dark ? 'text-white/55' : 'text-gray-500'}`}>{item}</div>
                 </div>
               ))}
@@ -189,7 +189,7 @@ export default function PortfolioSection() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="tag-pill bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 mb-4 inline-block">
+            <span className="tag-pill bg-teal-500/10 border border-teal-500/20 text-teal-500 mb-4 inline-block">
               Week 12
             </span>
             <h2 className="font-display font-bold text-3xl sm:text-4xl mb-3">
@@ -211,13 +211,13 @@ export default function PortfolioSection() {
               <div className={`text-xs font-semibold ${muted}`}>Checklist Progress</div>
               <div className="flex items-center gap-3">
                 <span className={`text-xs ${muted}`}>{checked.length} of {checklist.length} done</span>
-                <span className="text-sm font-black text-emerald-500">{checkProgress}%</span>
+                <span className="text-sm font-black text-teal-500">{checkProgress}%</span>
               </div>
             </div>
             {/* track */}
             <div className={`h-3 rounded-full overflow-hidden ${dark ? 'bg-white/[0.06]' : 'bg-gray-100'}`}>
               <motion.div
-                className="h-full rounded-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-teal-400"
+                className="h-full rounded-full bg-gradient-to-r from-teal-400 via-teal-400 to-teal-400"
                 animate={{ width: `${checkProgress}%` }}
                 transition={{ duration: 0.5, ease: 'easeOut' }}
               />
@@ -226,7 +226,7 @@ export default function PortfolioSection() {
               <motion.p
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center text-sm font-bold text-emerald-500 mt-3"
+                className="text-center text-sm font-bold text-teal-500 mt-3"
               >
                 🎉 You're ready to apply!
               </motion.p>
@@ -248,8 +248,8 @@ export default function PortfolioSection() {
                   className={`flex items-start gap-4 p-4 rounded-2xl border text-left transition-all duration-200 w-full ${
                     done
                       ? dark
-                        ? 'bg-emerald-500/[0.05] border-emerald-500/25'
-                        : 'bg-emerald-50 border-emerald-200'
+                        ? 'bg-teal-500/[0.05] border-teal-500/25'
+                        : 'bg-teal-50 border-teal-200'
                       : dark
                         ? 'bg-white/[0.025] border-white/[0.06] hover:border-white/[0.14]'
                         : 'bg-white border-gray-100 hover:border-gray-200 shadow-sm'
@@ -258,7 +258,7 @@ export default function PortfolioSection() {
                   {/* Checkbox */}
                   <div className={`shrink-0 w-6 h-6 rounded-lg border-2 flex items-center justify-center text-xs font-black transition-all duration-200 mt-0.5 ${
                     done
-                      ? 'bg-emerald-400 border-emerald-400 text-black'
+                      ? 'bg-teal-400 border-teal-400 text-black'
                       : dark ? 'border-white/20' : 'border-gray-200'
                   }`}>
                     {done ? '✓' : ''}
@@ -292,8 +292,8 @@ export default function PortfolioSection() {
             }`}
           >
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
-              <div className={`absolute -top-20 -left-20 w-64 h-64 rounded-full blur-[80px] ${dark ? 'bg-violet-600/8' : 'bg-violet-400/10'}`} />
-              <div className={`absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-[80px] ${dark ? 'bg-pink-600/8' : 'bg-pink-400/8'}`} />
+              <div className={`absolute -top-20 -left-20 w-64 h-64 rounded-full blur-[80px] ${dark ? 'bg-indigo-600/8' : 'bg-indigo-400/10'}`} />
+              <div className={`absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-[80px] ${dark ? 'bg-orange-600/8' : 'bg-orange-400/8'}`} />
             </div>
             <div className="relative z-10">
               <div className="text-5xl mb-6">✦</div>
