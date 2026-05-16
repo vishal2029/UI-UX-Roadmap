@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from '../context/ThemeContext';
 import { useProgress } from '../context/ProgressContext';
 import { useAuth } from '../context/AuthContext';
 
@@ -49,8 +48,7 @@ export default function Navbar() {
   const [scrolled,    setScrolled]    = useState(false);
   const [scrollPct,   setScrollPct]   = useState(0);   // for top strip only
   const [menuOpen,    setMenuOpen]    = useState(false);
-  const { dark, toggle } = useTheme();
-  const { pct: checklistPct, checked, total, clearProgress } = useProgress(); // for the pill
+    const { pct: checklistPct, checked, total, clearProgress } = useProgress(); // for the pill
   const { logout } = useAuth();
 
   const handleLogout = () => {
@@ -82,7 +80,7 @@ export default function Navbar() {
     <>
       {/* ── Top scroll-progress strip ── */}
       <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] pointer-events-none">
-        <div className={`absolute inset-0 ${dark ? 'bg-white/[0.05]' : 'bg-black/[0.07]'}`} />
+        <div className={`absolute inset-0 bg-black/[0.07]`} />
         <motion.div
           className="absolute top-0 left-0 h-full bg-gradient-to-r from-indigo-500 via-orange-500 to-teal-400"
           style={{ width: `${scrollPct}%` }}
@@ -105,7 +103,7 @@ export default function Navbar() {
           scrolled
             ? dark
               ? 'bg-[rgba(7,7,15,0.82)] backdrop-blur-xl border-b border-white/[0.07]'
-              : 'bg-[rgba(245,245,251,0.88)] backdrop-blur-xl border-b border-gray-200 shadow-sm'
+              : 'bg-[rgba(245,245,251,0.88)] backdrop-blur-xl border-b border-border shadow-sm'
             : ''
         }`}
       >
@@ -114,7 +112,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 font-display font-bold text-[15px] shrink-0">
             <span className="text-indigo-500 text-xl">✦</span>
-            <span className={`hidden sm:block ${dark ? 'text-white' : 'text-gray-900'}`}>UI/UX Roadmap</span>
+            <span className={`hidden sm:block text-slate-900`}>UI/UX Roadmap</span>
           </a>
 
           {/* Desktop links */}
@@ -122,7 +120,7 @@ export default function Navbar() {
             {links.map(l => (
               <a key={l.href} href={l.href}
                 className={`text-[13px] font-medium transition-colors ${
-                  dark ? 'text-white/50 hover:text-white' : 'text-gray-500 hover:text-gray-900'
+                  'text-slate-500 hover:text-slate-900'
                 }`}>
                 {l.label}
               </a>
@@ -146,7 +144,7 @@ export default function Navbar() {
                 />
               </svg>
               Progress
-              <span className={`text-[11px] font-black tabular-nums ${dark ? 'opacity-60' : 'opacity-50'}`}>
+              <span className={`text-[11px] font-black tabular-nums opacity-50`}>
                 {checked.length}/{total}
               </span>
             </a>
@@ -162,7 +160,7 @@ export default function Navbar() {
               className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 ${
                 dark
                   ? 'bg-white/[0.06] border border-white/[0.08] text-white/40 hover:bg-red-500/20 hover:text-red-400 hover:border-red-500/30'
-                  : 'bg-gray-100 border border-gray-200 text-gray-500 hover:bg-red-50 hover:text-red-500 hover:border-red-200'
+                  : 'bg-surface2 border border-border text-slate-500 hover:bg-red-50 hover:text-red-500 hover:border-red-200'
               }`}
             >
               <LogoutIcon />
@@ -175,12 +173,12 @@ export default function Navbar() {
               className={`w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200 ${
                 dark
                   ? 'bg-white/[0.06] border border-white/[0.08] text-yellow-300 hover:bg-white/[0.11]'
-                  : 'bg-gray-100 border border-gray-200 text-gray-600 hover:bg-gray-200'
+                  : 'bg-surface2 border border-border text-slate-600 hover:bg-gray-200'
               }`}
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.span
-                  key={dark ? 'sun' : 'moon'}
+                  key={'moon'}
                   initial={{ rotate: -30, opacity: 0, scale: 0.7 }}
                   animate={{ rotate: 0,   opacity: 1, scale: 1   }}
                   exit={{    rotate:  30, opacity: 0, scale: 0.7 }}
@@ -198,7 +196,7 @@ export default function Navbar() {
               className={`lg:hidden w-9 h-9 flex items-center justify-center rounded-xl transition-all ${
                 dark
                   ? 'bg-white/[0.06] border border-white/[0.08] text-white/70'
-                  : 'bg-gray-100 border border-gray-200 text-gray-600'
+                  : 'bg-surface2 border border-border text-slate-600'
               }`}
             >
               <span className="text-sm">{menuOpen ? '✕' : '☰'}</span>
@@ -218,13 +216,13 @@ export default function Navbar() {
             className={`fixed top-[61px] left-0 right-0 z-40 px-6 py-4 flex flex-col gap-3 lg:hidden border-b ${
               dark
                 ? 'bg-[rgba(7,7,15,0.95)] backdrop-blur-xl border-white/[0.07]'
-                : 'bg-white/95 backdrop-blur-xl border-gray-200 shadow-md'
+                : 'bg-white/95 backdrop-blur-xl border-border shadow-md'
             }`}
           >
             {links.map(l => (
               <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
                 className={`text-sm font-medium py-1 transition-colors ${
-                  dark ? 'text-white/70 hover:text-white' : 'text-gray-600 hover:text-gray-900'
+                  'text-slate-600 hover:text-slate-900'
                 }`}>
                 {l.label}
               </a>
@@ -233,7 +231,7 @@ export default function Navbar() {
               href="#progress"
               onClick={() => setMenuOpen(false)}
               className={`flex items-center gap-2 text-sm font-bold py-1 ${
-                dark ? 'text-indigo-300' : 'text-indigo-700'
+                'text-indigo-700'
               }`}
             >
               Checklist Progress — {checked.length}/{total} done ({checklistPct}%)

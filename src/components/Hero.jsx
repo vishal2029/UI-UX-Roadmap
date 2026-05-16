@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 
 const outcomes = [
@@ -12,8 +11,7 @@ const outcomes = [
 ];
 
 export default function Hero() {
-  const { dark } = useTheme();
-  const { userName } = useAuth();
+    const { userName } = useAuth();
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-20 overflow-hidden">
       {/* Orbs */}
@@ -25,7 +23,7 @@ export default function Hero() {
 
       {/* Grid pattern */}
       <div className="pointer-events-none absolute inset-0"
-        style={{ backgroundImage: `radial-gradient(circle, ${dark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.04)'} 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
+        style={{ backgroundImage: `radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px)`, backgroundSize: '40px 40px' }} />
 
       <div className="relative z-10 max-w-5xl mx-auto">
         {/* Badge */}
@@ -59,7 +57,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className={`text-lg sm:text-xl mb-12 max-w-2xl mx-auto leading-relaxed ${dark ? 'text-white/50' : 'text-gray-500'}`}
+          className={`text-lg sm:text-xl mb-12 max-w-2xl mx-auto leading-relaxed text-slate-500`}
         >
           Theory · Design Fundamentals · AI Tools · Real Projects · Portfolio Building
         </motion.p>
@@ -69,7 +67,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className={`inline-flex flex-wrap justify-center items-center gap-0 mb-12 rounded-2xl overflow-hidden border ${dark ? 'bg-white/[0.04] border-white/[0.07]' : 'bg-white border-gray-100 shadow-md'}`}
+          className={`inline-flex flex-wrap justify-center items-center gap-0 mb-12 rounded-2xl overflow-hidden border bg-white border-border shadow-md`}
         >
           {[
             { num: '2–3', label: 'hrs/weekday' },
@@ -77,10 +75,10 @@ export default function Hero() {
             { num: '12', label: 'weeks total' },
           ].map((s, i) => (
             <div key={i} className="flex items-center">
-              {i > 0 && <div className={`w-px h-14 ${dark ? 'bg-white/[0.07]' : 'bg-gray-100'}`} />}
+              {i > 0 && <div className={`w-px h-14 bg-surface2`} />}
               <div className="px-8 py-4 text-center">
                 <div className="font-display text-3xl font-black text-indigo-400">{s.num}</div>
-                <div className={`text-xs font-medium mt-0.5 ${dark ? 'text-white/40' : 'text-gray-400'}`}>{s.label}</div>
+                <div className={`text-xs font-medium mt-0.5 text-slate-400`}>{s.label}</div>
               </div>
             </div>
           ))}
@@ -97,7 +95,7 @@ export default function Hero() {
             Start the Journey
             <span>↓</span>
           </a>
-          <a href="#overview" className={`px-8 py-4 rounded-full font-bold text-sm border transition-all inline-flex items-center gap-2 ${dark ? 'text-white/70 border-white/10 hover:border-white/25 hover:text-white' : 'text-gray-600 border-gray-200 hover:border-gray-400 hover:text-gray-900'}`}>
+          <a href="#overview" className={`px-8 py-4 rounded-full font-bold text-sm border transition-all inline-flex items-center gap-2 text-slate-600 border-border hover:border-gray-400 hover:text-slate-900`}>
             What you'll get
           </a>
         </motion.div>
@@ -123,11 +121,11 @@ export default function Hero() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.07 }}
               viewport={{ once: true }}
-              className={`card-hover border rounded-2xl p-6 text-left cursor-default ${dark ? 'bg-white/[0.03] border-white/[0.07]' : 'bg-white border-gray-100 shadow-sm'}`}
+              className={`card-hover border rounded-2xl p-6 text-left cursor-default bg-white border-border shadow-sm`}
             >
               <div className="text-3xl mb-3">{o.icon}</div>
               <h3 className="font-bold text-base mb-2">{o.title}</h3>
-              <p className={`text-sm leading-relaxed ${dark ? 'text-white/45' : 'text-gray-500'}`}>{o.desc}</p>
+              <p className={`text-sm leading-relaxed text-slate-500`}>{o.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -5,9 +5,11 @@
 @tailwind utilities;
 
 :root {
-  --accent: #4f46e5;
-  --accent2: #f97316;
-  --accent3: #14b8a6;
+  --accent: #5C54FF; /* Signature Blurple */
+  --accent2: #FF5B30; /* Signature Coral */
+  --accent3: #1CB090; /* Signature Mint */
+  --bg-color: #FAFBFC;
+  --text-main: #0F172A;
 }
 
 * { box-sizing: border-box; }
@@ -15,16 +17,17 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #07070f;
-  color: #f0f0ff;
+  background: var(--bg-color);
+  color: var(--text-main);
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #07070f; }
-::-webkit-scrollbar-thumb { background: rgba(79, 70, 229, 0.35); border-radius: 99px; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { background: rgba(92, 84, 255, 0.3); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(92, 84, 255, 0.6); }
 
 /* Gradient text utility */
 .grad-text {

@@ -1,4 +1,4 @@
-import { ThemeProvider, useTheme } from './context/ThemeContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { ProgressProvider } from './context/ProgressContext';
 import { AuthProvider } from './context/AuthContext';
 import Navbar from './components/Navbar';
@@ -10,15 +10,14 @@ import PortfolioSection from './components/PortfolioSection';
 import LoginGate from './components/LoginGate';
 
 function Footer() {
-  const { dark } = useTheme();
-  return (
-    <footer className={`border-t py-8 px-6 ${dark ? 'border-white/[0.06]' : 'border-gray-200'}`}>
+    return (
+    <footer className={`border-t py-8 px-6 border-border`}>
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-        <div className={`flex items-center gap-2 ${dark ? 'text-white/30' : 'text-gray-400'}`}>
+        <div className={`flex items-center gap-2 text-slate-400`}>
           <span className="text-indigo-500">✦</span>
           <span>UI/UX Internship Roadmap — 12-Week Journey</span>
         </div>
-        <div className={`flex gap-6 ${dark ? 'text-white/30' : 'text-gray-400'}`}>
+        <div className={`flex gap-6 text-slate-400`}>
           {['Roadmap', 'Theory', 'Portfolio', 'Progress'].map(l => (
             <a
               key={l}
@@ -26,7 +25,7 @@ function Footer() {
               className={`transition-colors font-medium ${
                 l === 'Progress'
                   ? 'text-indigo-500 hover:text-indigo-400'
-                  : dark ? 'hover:text-white/60' : 'hover:text-gray-700'
+                  : 'hover:text-slate-700'
               }`}
             >
               {l}
@@ -39,11 +38,8 @@ function Footer() {
 }
 
 function AppInner() {
-  const { dark } = useTheme();
-  return (
-    <div className={`min-h-screen font-sans transition-colors duration-300 ${
-      dark ? 'bg-[#07070f] text-white' : 'bg-[#f5f5fb] text-gray-900'
-    }`}>
+    return (
+    <div className={`min-h-screen font-sans`}>
       <Navbar />
       <Hero />
       <RoadmapSection />

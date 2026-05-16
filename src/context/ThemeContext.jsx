@@ -1,27 +1,14 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext } from 'react';
 
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [dark, setDark] = useState(true);
-
-  useEffect(() => {
-    const saved = localStorage.getItem('uiux-theme');
-    if (saved) setDark(saved === 'dark');
-  }, []);
-
-  const toggle = () => {
-    setDark(prev => {
-      localStorage.setItem('uiux-theme', !prev ? 'dark' : 'light');
-      return !prev;
-    });
-  };
-
+  // Enforce light mode only for signature brand consistency
   return (
-    <ThemeContext.Provider value={{ dark, toggle }}>
+    <ThemeContext.Provider value={{ dark: false, toggle: () => {} }}>
       {children}
     </ThemeContext.Provider>
   );
 }
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = () => useContext(ThemeContext) ?? { dark: false, toggle: () => {} };

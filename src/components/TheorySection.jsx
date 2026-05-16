@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { theory, terms } from '../data';
-import { useTheme } from '../context/ThemeContext';
 
 function TheoryAccordion({ item, index }) {
   const [open, setOpen] = useState(false);
-  const { dark } = useTheme();
-  return (
+    return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -14,8 +12,8 @@ function TheoryAccordion({ item, index }) {
       viewport={{ once: true }}
       className={`border rounded-2xl overflow-hidden transition-all duration-200 ${
         open
-          ? 'border-indigo-500/30 ' + (dark ? 'bg-indigo-500/[0.04]' : 'bg-indigo-50')
-          : dark ? 'border-white/[0.07] bg-white/[0.025]' : 'border-gray-100 bg-white shadow-sm'
+          ? 'border-indigo-500/30 ' + ('bg-indigo-50')
+          : 'border-border bg-white shadow-sm'
       }`}
     >
       <button
@@ -27,7 +25,7 @@ function TheoryAccordion({ item, index }) {
         <motion.span
           animate={{ rotate: open ? 90 : 0 }}
           transition={{ duration: 0.25 }}
-          className={`text-sm shrink-0 transition-colors ${open ? 'text-indigo-500' : dark ? 'text-white/30' : 'text-gray-400'}`}
+          className={`text-sm shrink-0 transition-colors ${open ? 'text-indigo-500' : 'text-slate-400'}`}
         >
           ▶
         </motion.span>
@@ -41,8 +39,8 @@ function TheoryAccordion({ item, index }) {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <div className={`px-5 pb-5 pt-0 border-t ${dark ? 'border-white/[0.06]' : 'border-gray-100'}`}>
-              <p className={`text-sm leading-relaxed pt-4 ${dark ? 'text-white/55' : 'text-gray-500'}`}>{item.body}</p>
+            <div className={`px-5 pb-5 pt-0 border-t border-border`}>
+              <p className={`text-sm leading-relaxed pt-4 text-slate-500`}>{item.body}</p>
             </div>
           </motion.div>
         )}
@@ -52,8 +50,7 @@ function TheoryAccordion({ item, index }) {
 }
 
 export default function TheorySection() {
-  const { dark } = useTheme();
-  const termColors = [
+    const termColors = [
     dark
       ? 'bg-indigo-500/10 border-indigo-500/25 text-indigo-300'
       : 'bg-indigo-50 border-indigo-200 text-indigo-700',
@@ -79,7 +76,7 @@ export default function TheorySection() {
         >
           <span className="tag-pill bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 mb-4 inline-block">Core Theory</span>
           <h2 className="font-display font-black text-4xl sm:text-5xl mb-4">Concepts You Must Understand</h2>
-          <p className={`max-w-md mx-auto ${dark ? 'text-white/45' : 'text-gray-500'}`}>Click each concept to expand the explanation. These are the foundations everything else builds on.</p>
+          <p className={`max-w-md mx-auto text-slate-500`}>Click each concept to expand the explanation. These are the foundations everything else builds on.</p>
         </motion.div>
 
         {/* Accordion grid */}

@@ -1,16 +1,14 @@
 import { motion } from 'framer-motion';
 import { niches, caseStudySteps, checklist } from '../data';
-import { useTheme } from '../context/ThemeContext';
 import { useProgress } from '../context/ProgressContext';
 
 export default function PortfolioSection() {
-  const { dark } = useTheme();
-  const { checked, toggle, pct: checkProgress } = useProgress();
+    const { checked, toggle, pct: checkProgress } = useProgress();
 
   /* reusable theme helpers */
-  const card  = dark ? 'bg-white/[0.03] border-white/[0.07]'   : 'bg-white border-gray-100 shadow-sm';
-  const muted = dark ? 'text-white/40'  : 'text-gray-400';
-  const sub   = dark ? 'text-white/45'  : 'text-gray-500';
+  const card  = dark ? 'bg-white/[0.03] border-white/[0.07]'   : 'bg-white border-border shadow-sm';
+  const muted = dark ? 'text-white/40'  : 'text-slate-400';
+  const sub   = dark ? 'text-white/45'  : 'text-slate-500';
 
   return (
     <div>
@@ -60,7 +58,7 @@ export default function PortfolioSection() {
 
       {/* ── Portfolio Blueprint ─────────────────────────────────────────── */}
       <section id="portfolio" className="py-20 px-6 relative">
-        <div className={`pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full blur-[100px] ${dark ? 'bg-indigo-600/5' : 'bg-indigo-400/5'}`} />
+        <div className={`pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full blur-[100px] bg-indigo-400/5`} />
         <div className="max-w-6xl mx-auto relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -81,7 +79,7 @@ export default function PortfolioSection() {
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className={`border rounded-2xl p-6 ${dark ? 'bg-white/[0.02] border-white/[0.06]' : 'bg-white border-gray-100 shadow-sm'}`}
+              className={`border rounded-2xl p-6 bg-white border-border shadow-sm`}
             >
               <h3 className="font-bold text-lg mb-6">Portfolio Pages</h3>
               <div className="space-y-3">
@@ -112,19 +110,19 @@ export default function PortfolioSection() {
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className={`border rounded-2xl p-6 ${dark ? 'bg-white/[0.02] border-white/[0.06]' : 'bg-white border-gray-100 shadow-sm'}`}
+              className={`border rounded-2xl p-6 bg-white border-border shadow-sm`}
             >
               <h3 className="font-bold text-lg mb-6">Case Study Structure</h3>
               <div>
                 {caseStudySteps.map((step, i) => (
                   <div
                     key={i}
-                    className={`flex items-center gap-4 py-3 border-b last:border-0 ${dark ? 'border-white/[0.05]' : 'border-gray-100'}`}
+                    className={`flex items-center gap-4 py-3 border-b last:border-0 border-border`}
                   >
                     <div className="w-7 h-7 rounded-full bg-gradient-to-br from-indigo-500 to-orange-500 flex items-center justify-center text-xs font-black shrink-0 text-white">
                       {i + 1}
                     </div>
-                    <div className={`text-sm font-medium ${dark ? 'text-white/75' : 'text-gray-700'}`}>{step}</div>
+                    <div className={`text-sm font-medium text-slate-700`}>{step}</div>
                     {i < 3 && <div className="ml-auto text-[10px] text-teal-500 font-semibold">Essential</div>}
                   </div>
                 ))}
@@ -152,7 +150,7 @@ export default function PortfolioSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`p-8 border rounded-2xl ${dark ? 'bg-white/[0.02] border-white/[0.06]' : 'bg-white border-gray-100 shadow-sm'}`}
+            className={`p-8 border rounded-2xl bg-white border-border shadow-sm`}
           >
             <h3 className="font-bold text-lg mb-6 text-center">What a Strong Case Study Must Show</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-3">
@@ -168,11 +166,11 @@ export default function PortfolioSection() {
                 <div
                   key={i}
                   className={`p-3 text-center rounded-xl border ${
-                    dark ? 'bg-teal-500/[0.04] border-teal-500/15' : 'bg-teal-50 border-teal-100'
+                    'bg-teal-50 border-teal-100'
                   }`}
                 >
                   <div className="text-lg mb-1 text-teal-500">✓</div>
-                  <div className={`text-xs leading-snug ${dark ? 'text-white/55' : 'text-gray-500'}`}>{item}</div>
+                  <div className={`text-xs leading-snug text-slate-500`}>{item}</div>
                 </div>
               ))}
             </div>
@@ -215,7 +213,7 @@ export default function PortfolioSection() {
               </div>
             </div>
             {/* track */}
-            <div className={`h-3 rounded-full overflow-hidden ${dark ? 'bg-white/[0.06]' : 'bg-gray-100'}`}>
+            <div className={`h-3 rounded-full overflow-hidden bg-surface2`}>
               <motion.div
                 className="h-full rounded-full bg-gradient-to-r from-teal-400 via-teal-400 to-teal-400"
                 animate={{ width: `${checkProgress}%` }}
@@ -252,22 +250,22 @@ export default function PortfolioSection() {
                         : 'bg-teal-50 border-teal-200'
                       : dark
                         ? 'bg-white/[0.025] border-white/[0.06] hover:border-white/[0.14]'
-                        : 'bg-white border-gray-100 hover:border-gray-200 shadow-sm'
+                        : 'bg-white border-border hover:border-border shadow-sm'
                   }`}
                 >
                   {/* Checkbox */}
                   <div className={`shrink-0 w-6 h-6 rounded-lg border-2 flex items-center justify-center text-xs font-black transition-all duration-200 mt-0.5 ${
                     done
                       ? 'bg-teal-400 border-teal-400 text-black'
-                      : dark ? 'border-white/20' : 'border-gray-200'
+                      : 'border-border'
                   }`}>
                     {done ? '✓' : ''}
                   </div>
                   <div>
                     <div className={`text-sm font-medium leading-snug transition-colors ${
                       done
-                        ? dark ? 'text-white/35 line-through' : 'text-gray-400 line-through'
-                        : dark ? 'text-white/80' : 'text-gray-800'
+                        ? 'text-slate-400 line-through'
+                        : 'text-gray-800'
                     }`}>
                       {item.label}
                     </div>
@@ -288,25 +286,25 @@ export default function PortfolioSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className={`relative text-center p-12 border rounded-3xl overflow-hidden ${
-              dark ? 'bg-white/[0.02] border-white/[0.07]' : 'bg-white border-gray-100 shadow-lg'
+              'bg-white border-border shadow-lg'
             }`}
           >
             <div className="pointer-events-none absolute inset-0 overflow-hidden">
-              <div className={`absolute -top-20 -left-20 w-64 h-64 rounded-full blur-[80px] ${dark ? 'bg-indigo-600/8' : 'bg-indigo-400/10'}`} />
-              <div className={`absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-[80px] ${dark ? 'bg-orange-600/8' : 'bg-orange-400/8'}`} />
+              <div className={`absolute -top-20 -left-20 w-64 h-64 rounded-full blur-[80px] bg-indigo-400/10`} />
+              <div className={`absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-[80px] bg-orange-400/8`} />
             </div>
             <div className="relative z-10">
               <div className="text-5xl mb-6">✦</div>
               <h2 className="font-display font-black text-3xl sm:text-4xl mb-4">
                 You don't need to be perfect<br />before applying.
               </h2>
-              <p className={`text-lg mb-3 ${dark ? 'text-white/70' : 'text-gray-600'}`}>
+              <p className={`text-lg mb-3 text-slate-600`}>
                 You need to become{' '}
-                <span className={`font-bold ${dark ? 'text-white' : 'text-gray-900'}`}>clear</span>,{' '}
-                <span className={`font-bold ${dark ? 'text-white' : 'text-gray-900'}`}>consistent</span>, and{' '}
-                <span className={`font-bold ${dark ? 'text-white' : 'text-gray-900'}`}>visible</span>.
+                <span className={`font-bold text-slate-900`}>clear</span>,{' '}
+                <span className={`font-bold text-slate-900`}>consistent</span>, and{' '}
+                <span className={`font-bold text-slate-900`}>visible</span>.
               </p>
-              <p className={`text-sm max-w-xl mx-auto leading-relaxed ${dark ? 'text-white/40' : 'text-gray-400'}`}>
+              <p className={`text-sm max-w-xl mx-auto leading-relaxed text-slate-400`}>
                 A beginner portfolio with two thoughtful projects, strong process, and a clean presentation is often enough to get the first serious conversation started.
               </p>
             </div>
